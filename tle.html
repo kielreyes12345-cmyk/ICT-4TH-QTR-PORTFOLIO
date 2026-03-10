@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TLE-ICT | Full Year Lessons</title>
+<style>
+:root{
+  --bg:#f4f6fb;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --maxw:1000px;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--bg);
+  font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color:#111827;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  padding-bottom:80px;
+  scroll-behavior: smooth;
+}
+
+/* ORIGINAL NAV */
+nav{
+  background:#0f172a;
+  color:white;
+  display:flex;
+  justify-content:center;
+  gap:28px;
+  padding:16px 10px;
+  position:sticky;
+  top:0;
+  z-index:999;
+  box-shadow:0 4px 20px rgba(2,6,23,0.08);
+}
+nav a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  font-size:16px;
+  padding:4px 6px;
+  transition: color .18s, transform .12s;
+}
+nav a:hover{
+  color:#60a5fa;
+  transform:translateY(-2px);
+}
+
+/* QUARTER NAV */
+.quarter-nav{
+  background:#2563eb;
+  padding:12px;
+  text-align:center;
+  position:sticky;
+  top:60px;
+  z-index:998;
+}
+.quarter-nav a{
+  color:white;
+  text-decoration:none;
+  font-weight:600;
+  margin:0 8px;
+  padding:8px 12px;
+  background:rgba(255,255,255,0.1);
+  border-radius:6px;
+  transition:0.3s;
+}
+.quarter-nav a:hover{
+  background:rgba(255,255,255,0.25);
+}
+
+/* HEADER */
+header.site-header{
+  max-width:var(--maxw);
+  margin:22px auto 12px;
+  padding:18px;
+  text-align:center;
+}
+header.site-header h1{margin:0;font-size:22px;color:#0b1220;}
+header.site-header p{margin:6px 0 0;color:var(--muted);font-size:14px;}
+
+/* TABLE OF CONTENTS INSIDE QUARTER */
+.toc{
+  max-width:var(--maxw);
+  margin:18px auto;
+  background:var(--card);
+  padding:18px;
+  border-radius:12px;
+  box-shadow:0 6px 18px rgba(2,6,23,0.06);
+}
+.toc a{
+  display:inline-block;
+  margin:6px 10px 6px 0;
+  color:#2563eb;
+  text-decoration:none;
+  font-weight:600;
+  background:rgba(37,99,235,0.06);
+  padding:8px 10px;
+  border-radius:8px;
+  transition:all 0.2s;
+}
+.toc a:hover{background:rgba(37,99,235,0.12); text-decoration:underline;}
+
+/* LESSON BOXES */
+.lesson{
+  max-width:var(--maxw);
+  margin:20px auto;
+  padding:22px;
+  border-radius:12px;
+  color:#fff;
+  box-shadow:0 8px 30px rgba(2,6,23,0.06);
+  overflow:hidden;
+}
+.lesson h2{margin-top:0;}
+.lesson h3{margin-bottom:6px;}
+.lesson p, .lesson ul, .lesson ol, .lesson table, .lesson pre{color:inherit;}
+.lesson ul, .lesson ol{margin-left:20px; margin-top:8px;}
+.lesson code, .lesson pre{
+  background: rgba(255,255,255,0.15);
+  padding:4px 6px;
+  border-radius:6px;
+  display:inline-block;
+  font-family: monospace;
+  color:#fff;
+}
+.lesson table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:10px;
+  background:rgba(255,255,255,0.1);
+  color:inherit;
+}
+.lesson table th, .lesson table td{
+  padding:8px;
+  border:1px solid rgba(255,255,255,0.2);
+  text-align:left;
+}
+
+/* LESSON COLORS */
+.lesson1 { background: linear-gradient(180deg,#60a5fa,#3b82f6); }
+.lesson2 { background: linear-gradient(180deg,#34d399,#10b981); color:#092014; }
+.lesson3 { background: linear-gradient(180deg,#fde68a,#f59e0b); color:#3b2f00; }
+.lesson4 { background: linear-gradient(180deg,#fdba74,#fb923c); color:#2b1400; }
+.lesson5 { background: linear-gradient(180deg,#c7b2ff,#8b5cf6); }
+.lesson6 { background: linear-gradient(180deg,#fda4a4,#ef4444); }
+
+/* BANNER IMAGES */
+.banner{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  justify-content:center;
+  margin-top:12px;
+}
+.banner img{
+  width:45%;
+  max-width:400px;
+  border-radius:12px;
+  box-shadow:0 3px 10px rgba(0,0,0,0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.banner img:hover{
+  transform: scale(1.05);
+  box-shadow:0 6px 16px rgba(0,0,0,0.2);
+}
+
+/* BACK TO TOP BUTTON */
+#topBtn{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  display:none;
+  background:#2563eb;
+  color:white;
+  border:none;
+  padding:12px 14px;
+  border-radius:50%;
+  font-size:18px;
+  cursor:pointer;
+}
+#topBtn:hover{background:#1e40af;}
+
+footer{
+  text-align:center;
+  padding:18px;
+  color:var(--muted);
+  font-size:14px;
+  margin-top:40px;
+}
+
+/* RESPONSIVE */
+@media (max-width:760px){
+  nav{gap:14px;padding:12px 6px;}
+  .quarter-nav a{display:block;margin:6px 0;}
+  .toc a{display:block;margin:6px 0;}
+  .lesson{padding:16px;}
+  header.site-header h1{font-size:18px;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ORIGINAL NAV -->
+<nav>
+  <a href="index.html">Home</a>
+  <a href="tle.html">TLE-ICT</a>
+  <a href="ap.html">Araling Panlipunan</a>
+  <a href="events.html">Events</a>
+</nav>
+
+<!-- QUARTER NAV -->
+<nav class="quarter-nav">
+  <a href="#q2">2nd Quarter</a>
+  <a href="#q3">3rd Quarter</a>
+  <a href="#q4">4th Quarter</a>
+</nav>
+
+<!-- HEADER -->
+<header class="site-header">
+  <h1>TLE-ICT Web Development Lessons</h1>
+  <p>Full Year Portfolio: 2nd, 3rd, and 4th Quarter Lessons</p>
+</header>
+
+<!-- ================= 2ND QUARTER ================= -->
+<div id="q2">
+<h2 style="text-align:center;margin-top:20px;">Second Quarter</h2>
+
+<section class="toc">
+<a href="#lesson1">Lesson 1</a>
+<a href="#lesson2">Lesson 2</a>
+<a href="#lesson3">Lesson 3</a>
+<a href="#lesson4">Lesson 4</a>
+<a href="#lesson5">Lesson 5</a>
+<a href="#lesson6">Lesson 6</a>
+</section>
+
+<!-- LESSONS 1–6 -->
+</article>
+  <!-- LESSON 1 -->
+  <article class="lesson lesson1" id="lesson1" aria-labelledby="l1title">
+    <h2 id="l1title">Lesson 1: Cascading Style Sheet (CSS)</h2>
+    <h3>What is CSS?</h3>
+    <p><strong>Cascading Style Sheet</strong></p>
+    <p>Describes how HTML elements are to be displayed on media</p>
+    <p>Saves a lot of work</p>
+    <p>External stylesheets are stored in CSS files</p>
+    <p>CSS is the language we use to style a web page</p>
+    <p>Used to define styles for your web pages</p>
+    <p>You should have a basic understanding of HTML or XHTML before learning CSS</p>
+    <h3>Layers of the Webpage</h3>
+    <p>Content (HTML)</p>
+    <p>Presentation (CSS)</p>
+    <p>Behavior (JavaScript)</p>
+    <h4>Content Layer</h4>
+    <p>Defines and lays out the text, images, animation, sound, and video on a web page using tags.</p>
+    <ul>
+      <li>Text must be easy to understand and make sense</li>
+      <li>Include alternative text</li>
+      <li>Ensure content fits for the web</li>
+      <li>Explain acronyms and abbreviations</li>
+      <li>Make images unambiguous for colorblind users</li>
+      <li>Provide users with necessary environmental changes</li>
+    </ul>
+    <h4>Presentation Layer</h4>
+    <p>Defines how people see your web page in a browser.</p>
+    <ul>
+      <li>Ensure text can be zoomed</li>
+      <li>Make interactive elements easy to find</li>
+      <li>Ensure contrast and clarity for colorblind users</li>
+      <li>Give consistent navigation</li>
+      <li>Aid users through business processes</li>
+      <li>Separate content into understandable units</li>
+    </ul>
+    <h4>Behavior Layer</h4>
+    <p>Where real-time user interaction happens.</p>
+    <ul>
+      <li>Ensure all functionality is available regardless of input device</li>
+      <li>Make the user experience as easy as possible</li>
+    </ul>
+    <h4>HTML vs CSS</h4>
+    <p><strong>HTML:</strong> Creates the actual content or foundation of the page</p>
+    <p><strong>CSS:</strong> Responsible for the design or style of the website, including layout, effects, and colors</p>
+    <h4>Benefits of Using CSS</h4>
+    <ul>
+      <li>Saves a lot of work</li>
+      <li>Easy maintenance</li>
+      <li>Makes web pages more visually appealing</li>
+    </ul>
+    <h4>Capabilities of CSS</h4>
+    <ul>
+      <li>Makes pages easily updatable</li>
+      <li>Positions objects on the page</li>
+      <li>Layers objects on the page</li>
+      <li>Creates custom tags</li>
+    </ul>
+    <h4>Advantages of Using CSS</h4>
+    <ul>
+      <li>Saves typing and development time</li>
+      <li>Downloads faster since the browser only loads one file once</li>
+      <li>Allows multiple linked CSS files in one document</li>
+    </ul>
+ <div class="banner">
+ <img src="CODE1.jfif" alt="CODE1">
+<img src="OUTPUT1.JFIF" alt="OUTPUT1">
+</div>
+
+  </article>
+
+  <!-- LESSON 2 -->
+  <article class="lesson lesson2" id="lesson2" aria-labelledby="l2title">
+    <h2 id="l2title">Lesson 2: Style Sheet and Its Parts</h2>
+    <h3>What is a Style Sheet?</h3>
+    <p>A set of instructions to a Web browser on how to display various elements on a Web page is known as a style sheet. Every CSS is a series of instructions called statements that:</p>
+    <ul>
+      <li>Identify the elements in an HTML document that it affects</li>
+      <li>Tell the browser how to draw these elements</li>
+      <li>Apply to elements such as paragraphs, links, and list items</li>
+      <li>Are just text files or text embedded in the head of an HTML document that separate content from appearance</li>
+      <li>Suggest to the browser how the page should be displayed</li>
+    </ul>
+    <h3>How CSS is Applied</h3>
+    <p>Linked method: CSS is stored in a separate file, instead of directly in the HTML page.</p>
+    <p>Embedded method: CSS is stored as part of the HTML page, in the header section.</p>
+    <p>Inline method: CSS is stored directly in the style attributes of HTML tags.</p>
+    <h4>Inline Style</h4>
+    <p>You can define the style for a single element using the style attribute. Various HTML tags can have the style attribute, and its value defines how that line will appear.</p>
+    <h4>Embedded Style</h4>
+    <p>Defined within the &lt;style&gt; tags inside the head part of an HTML file. It provides style for the entire HTML document.</p>
+    <h4>Linked Style</h4>
+    <p>Linked CSS is made outside the HTML file using the &lt;link&gt; element. It establishes a relationship between the HTML document and the stylesheet file.</p>
+    <p>Used only within the &lt;head&gt;&lt;/head&gt; section</p>
+    <p>The stylesheet file contains only style rules, no HTML code</p>
+    <h4>Creating an External CSS</h4>
+    <ol>
+      <li>Open a blank document in Notepad.</li>
+      <li>Type the styles you want to define.</li>
+      <li>On the Menu Bar, click File → Save.</li>
+      <li>Type your filename with a .css extension and select All Files as the file type.</li>
+      <li>Linking Your CSS to an HTML File: After creating your CSS file, open your HTML file and type this inside the head section:</li>
+    </ol>
+    <p><code>&lt;link rel="stylesheet" href="linked.css" type="text/css"&gt;</code></p>
+    <p>Then save your HTML file.</p>
+<div class="banner">
+ <img src="CODE2.jfif" alt="CODE2">
+<img src="OUTPUT2.JFIF" alt="OUTPUT2">
+</div>
+
+  </article>
+
+  <!-- LESSON 3 -->
+  <article class="lesson lesson3" id="lesson3" aria-labelledby="l3title">
+    <h2 id="l3title">Lesson 3: Display Property</h2>
+    <h3>Definition</h3>
+    <p>The <strong>display property</strong> is one of the most important CSS properties for controlling layout. It determines how an element is shown on a web page.</p>
+    <h3>Main Display Values</h3>
+    <ul>
+      <li><strong>block</strong> — starts on a new line and takes up the full width available (e.g. &lt;div&gt;, &lt;p&gt;, &lt;h1&gt;–&lt;h6&gt;)</li>
+      <li><strong>inline</strong> — does not start on a new line; only takes up as much width as necessary (e.g. &lt;span&gt;, &lt;a&gt;)</li>
+      <li><strong>inline-block</strong> — behaves like inline but allows setting width and height</li>
+      <li><strong>none</strong> — hides the element completely; it will not occupy any space</li>
+    </ul>
+    <h3>Examples</h3>
+    <p><code>display: block;</code> — Example: &lt;div&gt;, &lt;header&gt;</p>
+    <p><code>display: inline;</code> — Example: &lt;span&gt;, &lt;a&gt;</p>
+    <p><code>display: inline-block;</code> — Example: buttons or icons in one row</p>
+    <p><code>display: none;</code> — used to hide an element dynamically</p>
+    <h3>Additional Display Values</h3>
+    <ul>
+      <li><strong>flex</strong> — enables flexible layouts with items aligned in rows or columns</li>
+      <li><strong>grid</strong> — allows arranging items into rows and columns simultaneously</li>
+      <li><strong>table</strong> — behaves like an HTML table element</li>
+      <li><strong>list-item</strong> — behaves like a list element (&lt;li&gt;)</li>
+    </ul>
+    <h3>Example CSS</h3>
+    <pre><code>
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+    </code></pre>
+    <h3>Summary</h3>
+    <p>By changing an element’s <strong>display property</strong>, you can control how elements appear, stack, or flow in a layout — essential for responsive design.</p>
+<div class="banner">
+ <img src="CODE3.jfif" alt="CODE3">
+<img src="OUTPUT3.JFIF" alt="OUTPUT3">
+</div>
+
+  </article>
+
+  <!-- LESSON 4 -->
+  <article class="lesson lesson4" id="lesson4" aria-labelledby="l4title">
+    <h2 id="l4title">Lesson 4: CSS Rule</h2>
+    <h3>Definition</h3>
+    <p>A <strong>CSS rule</strong> defines how to style an HTML element. Each rule consists of a <strong>selector</strong> and a <strong>declaration block</strong>.</p>
+    <h3>Structure of a CSS Rule</h3>
+    <pre><code>
+selector {
+  property: value;
+}
+    </code></pre>
+    <p>Example:</p>
+    <pre><code>
+p {
+  color: blue;
+  font-size: 16px;
+}
+    </code></pre>
+    <h3>Explanation</h3>
+    <ul>
+      <li><strong>Selector</strong> — indicates which HTML element is affected (e.g. <code>p</code> for paragraphs)</li>
+      <li><strong>Property</strong> — what aspect of the element you want to change (e.g. color, font-size)</li>
+      <li><strong>Value</strong> — defines how that property should look (e.g. blue, 16px)</li>
+    </ul>
+    <h3>Types of CSS Rules</h3>
+    <ul>
+      <li><strong>Element Selector</strong> — targets HTML tags directly (e.g. <code>h1 {color:red;}</code>)</li>
+      <li><strong>Class Selector</strong> — targets elements with a specific class (e.g. <code>.main {text-align:center;}</code>)</li>
+      <li><strong>ID Selector</strong> — targets a unique element (e.g. <code>#footer {background:black;}</code>)</li>
+      <li><strong>Group Selector</strong> — combines multiple selectors (e.g. <code>h1, h2, h3 {font-weight:bold;}</code>)</li>
+      <li><strong>Universal Selector</strong> — applies to all elements (e.g. <code>* {margin:0;}</code>)</li>
+    </ul>
+    <h3>How a Browser Reads CSS Rules</h3>
+    <ol>
+      <li>The browser finds the selector and matches it with HTML elements.</li>
+      <li>It then applies each property–value pair within the declaration block.</li>
+      <li>If there are conflicting styles, the browser uses the rule of <strong>specificity</strong> and <strong>cascading</strong>.</li>
+    </ol>
+<div class="banner">
+ <img src="CODE4.jfif" alt="CODE4">
+<img src="OUTPUT4.JFIF" alt="OUTPUT4">
+</div>
+
+  </article>
+
+  <!-- LESSON 5 -->
+  <article class="lesson lesson5" id="lesson5" aria-labelledby="l5title">
+    <h2 id="l5title">Lesson 5: CSS Selectors</h2>
+    <h3>Definition</h3>
+    <p>Selectors in CSS are patterns used to select the element(s) you want to style.</p>
+    <h3>Basic Selectors</h3>
+    <ul>
+      <li><strong>Type Selector</strong> — selects all elements of a given type (e.g. <code>p</code>)</li>
+      <li><strong>Class Selector</strong> — selects all elements with a given class (e.g. <code>.menu</code>)</li>
+      <li><strong>ID Selector</strong> — selects a unique element with a given id (e.g. <code>#header</code>)</li>
+      <li><strong>Universal Selector</strong> — selects all elements (e.g. <code>*</code>)</li>
+    </ul>
+    <h3>Grouping Selectors</h3>
+    <p>Multiple selectors can share the same style rules using commas:</p>
+    <pre><code>
+h1, h2, h3 {
+  font-family: Arial, sans-serif;
+}
+    </code></pre>
+    <h3>Combinator Selectors</h3>
+    <ul>
+      <li><strong>Descendant Selector</strong> — <code>div p</code> selects all <code>p</code> inside a <code>div</code></li>
+      <li><strong>Child Selector</strong> — <code>div > p</code> selects all <code>p</code> that are direct children of <code>div</code></li>
+      <li><strong>Adjacent Sibling</strong> — <code>h1 + p</code> selects the <code>p</code> immediately after <code>h1</code></li>
+      <li><strong>General Sibling</strong> — <code>h1 ~ p</code> selects all <code>p</code> siblings after <code>h1</code></li>
+    </ul>
+    <h3>Pseudo-classes</h3>
+    <p>Select elements based on a state:</p>
+    <ul>
+      <li><code>a:hover</code> — when the link is hovered</li>
+      <li><code>li:first-child</code> — first list item</li>
+      <li><code>input:focus</code> — focused input</li>
+    </ul>
+<div class="banner">
+ <img src="CODE5.jfif" alt="CODE5">
+<img src="OUTPUT5.JFIF" alt="OUTPUT5">
+</div>
+
+  </article>
+
+  <!-- LESSON 6 -->
+  <article class="lesson lesson6" id="lesson6" aria-labelledby="l6title">
+    <h2 id="l6title">Lesson 6: CSS Dimensions</h2>
+    <h3>Introduction</h3>
+    <p>CSS dimensions define the size of elements on a web page. You can set width, height, margin, padding, and border.</p>
+    <h3>Width and Height</h3>
+    <ul>
+      <li><strong>Width:</strong> the content width of an element</li>
+      <li><strong>Height:</strong> the content height of an element</li>
+    </ul>
+    <p>Example:</p>
+    <pre><code>
+div {
+  width: 300px;
+  height: 150px;
+}
+    </code></pre>
+    <h3>Margin</h3>
+    <p>Margin creates space outside an element.</p>
+    <pre><code>
+p {
+  margin: 10px 20px;
+}
+    </code></pre>
+    <h3>Padding</h3>
+    <p>Padding creates space inside an element, between content and border.</p>
+    <pre><code>
+div {
+  padding: 15px;
+}
+    </code></pre>
+    <h3>Border</h3>
+    <p>Adds a visible line around an element.</p>
+    <pre><code>
+div {
+  border: 2px solid black;
+}
+    </code></pre>
+    <h3>Box Model</h3>
+    <p>The CSS Box Model describes how width and height are calculated including content, padding, border, and margin.</p>
+    <table>
+      <tr><th>Property</th><th>Description</th></tr>
+      <tr><td>Content</td><td>The actual content inside the element</td></tr>
+      <tr><td>Padding</td><td>Space between content and border</td></tr>
+      <tr><td>Border</td><td>The border surrounding the padding</td></tr>
+      <tr><td>Margin</td><td>Space outside the element</td></tr>
+    </table>
+    <h3>Units</h3>
+    <p>Dimensions can be set using:</p>
+    <ul>
+      <li><strong>px</strong> — pixels</li>
+      <li><strong>%</strong> — percentage of parent element</li>
+      <li><strong>em/rem</strong> — relative to font size</li>
+      <li><strong>vh/vw</strong> — relative to viewport height/width</li>
+    </ul>
+<div class="banner">
+ <img src="CODE6.jfif" alt="CODE6">
+<img src="OUTPUT6.jfif" alt="OUTPUT6">
+</div>
+
+<!-- ================= 3RD QUARTER ================= -->
+<div id="q3">
+<h2 style="text-align:center;margin-top:40px;">Third Quarter</h2>
+<section class="toc">
+<a href="#q3l1">Lesson 1</a>
+<a href="#q3l2">Lesson 2</a>
+<a href="#q3l3">Lesson 3</a>
+<a href="#q3l4">Lesson 4</a>
+</section>
+
+<!-- LESSONS 1–4 -->
+
+<!-- QUARTER 3 LESSONS -->
+<div class="quarter3">
+
+<!-- LESSON 1 -->
+<article class="lesson lesson1" id="q3l1" aria-labelledby="l1title">
+  <h2 id="l1title">Quarter 3 — Lesson 1: Typography and Font Properties</h2>
+
+  <h3>Definition</h3>
+  <p><strong>Typography</strong> is the styling and arrangement of text on a web page using CSS to ensure legibility, readability, and visual appeal.</p>
+
+  <h3>Font Families (font-family)</h3>
+  <p><strong>Purpose:</strong> Specifies the typeface (e.g., Arial, Times New Roman).</p>
+  <p><strong>Prioritization:</strong> Browsers read the list from left to right and use the first available font.</p>
+
+  <p><strong>Syntax:</strong></p>
+<pre><code>
+font-family: "Source Sans Pro", "Arial", sans-serif;
+</code></pre>
+
+  <p><strong>Note:</strong> Always include a generic font family such as <code>sans-serif</code> at the end as a fallback.</p>
+
+  <h3>Font Sizing (font-size)</h3>
+  <p><strong>Keywords:</strong></p>
+  <ul>
+    <li>xx-small</li>
+    <li>x-small</li>
+    <li>small</li>
+    <li>medium</li>
+    <li>large</li>
+    <li>x-large</li>
+    <li>xx-large</li>
+  </ul>
+
+  <p><strong>Specific Units:</strong></p>
+  <ul>
+    <li>Pixels (px)</li>
+    <li>Points (pt)</li>
+    <li>Percentages (%)</li>
+  </ul>
+
+  <h3>Font Weight & Style</h3>
+  <p><strong>font-weight</strong> defines character thickness.</p>
+  <ul>
+    <li>normal</li>
+    <li>bold</li>
+    <li>bolder</li>
+    <li>lighter</li>
+  </ul>
+
+  <p><strong>Numeric values:</strong></p>
+  <ul>
+    <li>100 (Thin)</li>
+    <li>400 (Normal)</li>
+    <li>700 (Bold)</li>
+    <li>900 (Black)</li>
+  </ul>
+
+  <p><strong>font-style</strong> values:</p>
+  <ul>
+    <li>normal</li>
+    <li>italic</li>
+    <li>oblique</li>
+  </ul>
+
+  <p><strong>font-variant</strong> is used for small-caps.</p>
+
+  <h3>Glyph</h3>
+  <p>A <strong>glyph</strong> is the visual representation of a character.</p>
+
+<div class="banner">
+ <img src="CODE7.jfif" alt="CODE7">
+ <img src="OUTPUT7.jfif" alt="OUTPUT7">
+</div>
+
+</article>
+
+
+<!-- LESSON 2 -->
+<article class="lesson lesson2" id="q3l2" aria-labelledby="l2title">
+  <h2 id="l2title">Quarter 3 — Lesson 2: Text Formatting and Effects</h2>
+
+  <h3>Alignment and Indentation</h3>
+  <p><strong>text-align</strong> sets horizontal alignment.</p>
+  <ul>
+    <li>left</li>
+    <li>right</li>
+    <li>center</li>
+    <li>justify</li>
+  </ul>
+
+  <p><strong>text-indent</strong> indents the first line of a paragraph.</p>
+  <ul>
+    <li>px</li>
+    <li>mm</li>
+    <li>cm</li>
+    <li>in</li>
+    <li>pt</li>
+    <li>em</li>
+    <li>%</li>
+  </ul>
+
+  <h3>Text Transformation and Decoration</h3>
+  <p><strong>text-transform</strong> controls capitalization.</p>
+  <ul>
+    <li>uppercase</li>
+    <li>lowercase</li>
+    <li>capitalize</li>
+  </ul>
+
+  <p><strong>text-decoration</strong> adds lines to text.</p>
+  <ul>
+    <li>none</li>
+    <li>underline</li>
+    <li>overline</li>
+    <li>line-through</li>
+  </ul>
+
+  <h3>Spacing and Shadows</h3>
+  <p><strong>line-height</strong> adjusts vertical space between lines.</p>
+  <p><strong>letter-spacing</strong> adjusts space between characters.</p>
+  <p><strong>word-spacing</strong> adjusts space between words.</p>
+
+  <p><strong>word-break</strong> values:</p>
+  <ul>
+    <li>normal</li>
+    <li>break-all</li>
+  </ul>
+
+  <p><strong>text-shadow</strong> adds shadow effects.</p>
+
+<pre><code>
+text-shadow: [horizontal offset] [vertical offset] [optional color];
+</code></pre>
+
+<pre><code>
+text-shadow: 2px 2px blue;
+</code></pre>
+
+<div class="banner">
+ <img src="CODE8.jfif" alt="CODE8">
+ <img src="OUTPUT8.jfif" alt="OUTPUT8">
+</div>
+
+</article>
+
+
+<!-- LESSON 3 -->
+<article class="lesson lesson3" id="q3l3" aria-labelledby="l3title">
+  <h2 id="l3title">Quarter 3 — Lesson 3: Layout and the Box Model</h2>
+
+  <h3>The CSS Box Model</h3>
+  <p>Every HTML element is considered a rectangular box consisting of:</p>
+
+  <ul>
+    <li><strong>Content</strong> – the text or images</li>
+    <li><strong>Padding</strong> – space inside the border</li>
+    <li><strong>Border</strong> – line surrounding padding and content</li>
+    <li><strong>Margin</strong> – space outside the border</li>
+  </ul>
+
+  <h3>Dimension and Organization</h3>
+  <p><strong>height</strong> and <strong>width</strong> control the size of content.</p>
+
+  <p><strong>Block-level tags:</strong></p>
+  <ul>
+    <li>&lt;p&gt;</li>
+    <li>&lt;h1&gt;</li>
+    <li>&lt;table&gt;</li>
+    <li>&lt;div&gt;</li>
+  </ul>
+
+  <p><strong>float</strong> allows elements to move left or right.</p>
+
+  <h3>Element Positioning (position)</h3>
+  <ul>
+    <li>static</li>
+    <li>relative</li>
+    <li>absolute</li>
+    <li>fixed</li>
+  </ul>
+
+  <p>Offsets use:</p>
+  <ul>
+    <li>top</li>
+    <li>bottom</li>
+    <li>left</li>
+    <li>right</li>
+  </ul>
+
+  <h3>Background Properties</h3>
+
+<pre><code>
+background-image: url("image.jpg");
+</code></pre>
+
+  <p><strong>background-repeat</strong>:</p>
+  <ul>
+    <li>repeat</li>
+    <li>no-repeat</li>
+    <li>repeat-x</li>
+    <li>repeat-y</li>
+  </ul>
+
+  <p><strong>background-attachment</strong>:</p>
+  <ul>
+    <li>scroll</li>
+    <li>fixed</li>
+  </ul>
+
+<div class="banner">
+ <img src="CODE9.jfif" alt="CODE9">
+ <img src="OUTPUT9.jfif" alt="OUTPUT9">
+</div>
+
+</article>
+
+
+<!-- LESSON 4 -->
+<article class="lesson lesson4" id="q3l4" aria-labelledby="l4title">
+  <h2 id="l4title">Quarter 3 — Lesson 4: Borders, Padding, and Tables</h2>
+
+  <h3>Border Properties</h3>
+  <p><strong>border-width</strong>:</p>
+  <ul>
+    <li>thin</li>
+    <li>medium</li>
+    <li>thick</li>
+    <li>px values</li>
+  </ul>
+
+  <p><strong>border-style</strong>:</p>
+  <ul>
+    <li>solid</li>
+    <li>dashed</li>
+    <li>dotted</li>
+    <li>double</li>
+    <li>groove</li>
+    <li>ridge</li>
+    <li>inset</li>
+    <li>outset</li>
+  </ul>
+
+  <p><strong>border-color</strong> may use:</p>
+  <ul>
+    <li>Color names</li>
+    <li>Hex values</li>
+    <li>RGB values</li>
+  </ul>
+
+  <h3>Padding Specifics</h3>
+  <p>Padding creates space between content and border.</p>
+
+<pre><code>
+padding: [top] [right] [bottom] [left];
+</code></pre>
+
+<pre><code>
+padding: 10px 5px 10px 5px;
+</code></pre>
+
+<pre><code>
+padding: 20px;
+</code></pre>
+
+  <h3>Table Styling</h3>
+  <ul>
+    <li>Use <strong>background-color</strong> to color tables</li>
+    <li>Tables can organize layouts</li>
+    <li>Styles can be applied to <strong>&lt;td&gt;</strong> cells</li>
+  </ul>
+
+<div class="banner">
+ <img src="CODE8.jfif" alt="CODE8">
+ <img src="OUTPUT8.jfif" alt="OUTPUT8">
+</div>
+
+</article>
+
+</div>
+
+<!-- ================= 4TH QUARTER ================= -->
+<div id="q4">
+<h2 style="text-align:center;margin-top:40px;">Fourth Quarter</h2>
+<section class="toc">
+<a href="#q4l1">Lesson 1</a>
+<a href="#q4l2">Lesson 2</a>
+<a href="#q4l3">Lesson 3</a>
+<a href="#q4l4">Lesson 4</a>
+</section>
+
+ <!-- QUARTER 4 LESSONS -->
+<div class="quarter4">
+
+<article class="lesson lesson1" id="q4l1">
+<h2>Quarter 4 — Lesson 1</h2>
+
+<h3>Introduction to JavaScript</h3>
+<p>JavaScript (JS) is the primary language used to make websites interactive. While HTML provides the structure and CSS provides the style, JS provides the behavior.</p>
+
+<h4>1. Key Concepts and Origin</h4>
+<ul>
+<li><b>The Founder:</b> Created by Brendan Eich at Netscape in 1995. It was developed in only 10 days.</li>
+<li><b>Original Names:</b> First called Mocha, then LiveScript, before finally being marketed as JavaScript to capitalize on the popularity of the Java language.</li>
+</ul>
+
+<p><b>Nature of JS:</b></p>
+<ul>
+<li><b>Client-side:</b> The script runs on the user's browser, reducing the load on the web server.</li>
+<li><b>High-level:</b> Uses syntax that is easy for humans to read and write.</li>
+<li><b>Interpreted:</b> Browsers read the code directly; it doesn't need to be "compiled" into a separate file first.</li>
+<li><b>Object-Oriented:</b> It treats data and functions as "objects" that can be manipulated.</li>
+<li><b>DHTML:</b> Combining JS with CSS and HTML creates Dynamic HTML, which allows page content to change without a full refresh.</li>
+</ul>
+
+<h4>2. Advantages & Disadvantages</h4>
+
+<p><b>Pros:</b></p>
+<ul>
+<li>Lightweight and fast.</li>
+<li>Works on all modern browsers (Chrome, Safari, Edge, Firefox).</li>
+<li>License-free: You don't have to pay to use the language.</li>
+</ul>
+
+<p><b>Cons:</b></p>
+<ul>
+<li>Security: Malicious scripts can be hidden in pages.</li>
+<li>Exposure: Since it is client-side, anyone can "View Source" and see your logic.</li>
+<li>Browser Consistency: Some older mobile devices or browsers might interpret JS differently, leading to errors.</li>
+</ul>
+
+<div class="banner">
+ <img src="CODE10.jfif" alt="CODE10">
+ <img src="OUTPUT10.jfif" alt="OUTPUT10">
+</div>
+
+</article>
+
+
+<article class="lesson lesson2" id="q4l2">
+<h2>Quarter 4 — Lesson 2</h2>
+
+<h3>Script Placement and Guidelines</h3>
+<p>To use JavaScript, you must tell the browser where the code starts and ends using the &lt;script&gt; tag.</p>
+
+<h4>1. Where to Place Your Code</h4>
+<ul>
+<li><b>&lt;head&gt; Section:</b> Scripts here are pre-loaded. This is the best place for functions that need to be ready as soon as the user interacts with the page.</li>
+<li><b>&lt;body&gt; Section:</b> Usually placed right before the closing &lt;/body&gt; tag. This ensures the HTML content loads first, so the user doesn't see a blank page while the script is loading.</li>
+<li><b>External JS:</b> You write code in a separate file (e.g., script.js) and link it using &lt;script src="script.js"&gt;&lt;/script&gt;. This is best for keeping your project organized.</li>
+</ul>
+
+<h4>2. Coding Guidelines</h4>
+<ul>
+<li><b>Case Sensitivity:</b> JavaScript is very strict. myVariable and myvariable are treated as two different things.</li>
+<li><b>White Space:</b> Extra spaces or tabs between code are ignored by JS, but they are vital for humans to read the code easily.</li>
+<li><b>Comments:</b> Use // for single-line comments and /* ... */ for multi-line comments. These are ignored by the browser.</li>
+<li><b>Syntax Tip:</b> Always use the type attribute to be safe: &lt;script type="text/JavaScript"&gt;.</li>
+</ul>
+
+<div class="banner">
+ <img src="CODE11.jfif" alt="CODE11">
+ <img src="OUTPUT11.jfif" alt="OUTPUT11">
+</div>
+
+</article>
+
+
+<article class="lesson lesson3" id="q4l3">
+<h2>Quarter 4 — Lesson 3</h2>
+
+<h3>The Building Blocks (Objects and Variables)</h3>
+<p>JavaScript views everything on your screen as an Object.</p>
+
+<h4>1. Core Components</h4>
+<ul>
+<li><b>Objects:</b> Items in the browser (e.g., the window, the document, a button).</li>
+<li><b>Methods:</b> These are actions. Think of them as verbs (e.g., document.write() tells the document to write text).</li>
+<li><b>Properties:</b> These are characteristics. Think of them as adjectives (e.g., document.bgColor describes the background color).</li>
+<li><b>Parameters:</b> Extra information passed into a method (e.g., in alert("Hello"), "Hello" is the parameter).</li>
+</ul>
+
+<h4>2. Variables and Data Types</h4>
+
+<p>Variables are containers for storing data. You declare them using the <b>var</b> keyword.</p>
+
+<p><b>Rules:</b></p>
+<ul>
+<li>Must start with a letter or underscore (never a number).</li>
+<li>No spaces or punctuation.</li>
+<li>Names are case-sensitive.</li>
+</ul>
+
+<p><b>Data Types:</b></p>
+<ul>
+<li><b>String:</b> Text inside quotes ("Hello").</li>
+<li><b>Number:</b> Integers (10) or Decimals (10.5).</li>
+<li><b>Boolean:</b> Logical true or false.</li>
+<li><b>Null/Undefined:</b> Values for when a variable is empty or hasn't been set yet.</li>
+</ul>
+
+<div class="banner">
+ <img src="CODE12.jfif" alt="CODE12">
+ <img src="OUTPUT12.jfif" alt="OUTPUT12">
+</div>
+
+</article>
+
+
+<article class="lesson lesson4" id="q4l4">
+<h2>Quarter 4 — Lesson 4</h2>
+
+<h3>Events, Popups, and Control Flow</h3>
+
+<h4>1. Event Handlers</h4>
+<p>Events are triggers that make code run.</p>
+
+<ul>
+<li><b>Mouse Events:</b> onclick, ondblclick, onmouseover (hovering), onmouseout.</li>
+<li><b>Keyboard Events:</b> onkeydown, onkeyup.</li>
+<li><b>Form/Page Events:</b> onload (when page finishes loading), onsubmit (when a form is sent), onblur (when an input field loses focus).</li>
+</ul>
+
+<h4>2. Interactive Popup Boxes</h4>
+<ul>
+<li><b>Alert:</b> alert("Warning!"); — Only has an OK button. Used for announcements.</li>
+<li><b>Confirm:</b> confirm("Are you sure?"); — Has OK and Cancel. Returns true or false.</li>
+<li><b>Prompt:</b> prompt("Enter name:", "Guest"); — Provides a text box for the user to type in.</li>
+</ul>
+
+<h4>3. Making Decisions (Conditionals)</h4>
+<p>Control flow allows your program to make choices based on data.</p>
+
+<ul>
+<li><b>if statement:</b> Runs code ONLY if the condition is true.</li>
+<li><b>else if:</b> Checks a second condition if the first one was false.</li>
+<li><b>else:</b> The final fallback; runs if none of the above conditions were met.</li>
+<li><b>switch:</b> Used when you have many different specific cases to check against a single variable.</li>
+</ul>
+
+<div class="banner">
+ <img src="CODE12.jfif" alt="CODE12">
+ <img src="OUTPUT12.jfif" alt="OUTPUT12">
+</div>
+
+</article>
+
+</div>
+
+<!-- BACK TO TOP BUTTON -->
+<button id="topBtn">↑</button>
+
+<script>
+// Back to top button
+let topBtn = document.getElementById("topBtn");
+window.onscroll = function() {
+  if(document.body.scrollTop > 200 || document.documentElement.scrollTop > 200){
+    topBtn.style.display = "block";
+  }else{
+    topBtn.style.display = "none";
+  }
+};
+topBtn.onclick = function() {
+  window.scrollTo({top:0,behavior:"smooth"});
+};
+</script>
+
+<footer>
+<p>&copy; 2026 TLE-ICT | Web Development Full Year Lessons</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kiel's Profile</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #e6f2ff;
+      color: #333;
+      line-height: 1.6;
+      transition: background 0.3s;
+    }
+
+    header {
+      background-color: #3399ff;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header h1 {
+      margin-bottom: 10px;
+      font-size: 2.5em;
+      transition: transform 0.3s;
+    }
+
+    header h1:hover {
+      transform: scale(1.05);
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    nav a:hover {
+      color: #cce6ff;
+      transform: scale(1.1);
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    section {
+      background-color: #cce6ff;
+      padding: 25px;
+      margin-bottom: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s ease;
+    }
+
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    section h2 {
+      color: #0066cc;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #99ccff;
+      padding-bottom: 5px;
+    }
+
+    .profile-item {
+      margin-bottom: 20px;
+      position: relative;
+      padding-left: 25px;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    .profile-item::before {
+      content: "\f007";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      color: #0066cc;
+    }
+
+    .profile-item:hover {
+      transform: translateX(5px);
+      color: #004d99;
+    }
+
+    .favorites {
+      margin-left: 20px;
+      list-style-type: square;
+      transition: all 0.3s;
+    }
+
+    .favorites li {
+      margin-bottom: 10px;
+      padding-left: 5px;
+      position: relative;
+    }
+
+    .favorites li::before {
+      content: "\f005";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      color: #0066cc;
+      margin-right: 8px;
+    }
+
+    .media {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+      transition: all 0.3s;
+    }
+
+    .media img, .media video {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+
+    .media img:hover, .media video:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+    }
+
+    video {
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .media img, .media video {
+        width: 100%;
+      }
+    }
+
+    /* Rotating background */
+    body::after {
+      content: "";
+      position: fixed;
+      width: 200%;
+      height: 200%;
+      top: -50%;
+      left: -50%;
+      background: radial-gradient(circle at center, rgba(51,153,255,0.05), transparent 70%);
+      animation: rotate 30s linear infinite;
+      z-index: -1;
+    }
+
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>KIEL'S E-PORTFOLIO</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="tle.html">TLE-ICT Contents</a>
+      <a href="ap.html">Araling Panlipunan Contents</a>
+      <a href="events.html">School Events</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Personal Self</h2>
+      <p class="profile-item"><strong>Name:</strong> Prince Arvin Kiel H. Reyes</p>
+      <p class="profile-item"><strong>Age:</strong> 15 years old</p>
+      <p class="profile-item"><strong>Birthday:</strong> June 18, 2010</p>
+
+      <h3>Favorites</h3>
+      <ul class="favorites">
+        <li>Basketball – playing and watching games</li>
+        <li>Red Ginisang Sayote, Pizza, Chicken Adobo, Ice Cream</li>
+        <li>Hobbies: Listening to music, hanging out with friends, playing video games</li>
+        <li>Subject: Math</li>
+        <li>Movie/Show: Marvels</li>
+        <li>Color: Blue</li>
+        <li>Animal: Dogs</li>
+        <li>Season: Summer</li>
+      </ul>
+
+      <div class="media">
+        <img src="pic1.jfif" alt="Personal Picture 1">
+        <img src="pic2.jfif" alt="Personal Picture 2">
+        <img src="pic3.jfif" alt="Personal Picture 3">
+      </div>
+    </section>
+
+    <section>
+      <h2>Circle of Friends</h2>
+      <p class="profile-item">I am fortunate to have a large circle of friends who make life exciting and enjoyable. We often spend our time doing bonding activities such as playing basketball, exploring new places, having movie nights, or just hanging out and sharing stories.</p>
+      <p class="profile-item">One of my favorite memories was during our school camping trip, where we played games, worked together on fun activities, and laughed late into the night. We also celebrate birthdays and other special events together, making every moment memorable. Our friendship is built on trust, support, and countless joyful moments.</p>
+
+      <div class="media">
+        <img src="pic4.jfif" alt="Friends Picture 1">
+        <img src="pic5.jfif" alt="Friends Picture 2">
+      </div>
+    </section>
+
+    <section>
+      <h2>My Family</h2>
+      <p class="profile-item">My family is my greatest support system. They encourage me in everything I do, from school projects to personal hobbies. Each member of my family has their own unique personality, making our home lively and full of love.</p>
+      <p class="profile-item">I cherish family events such as reunions, birthdays, holiday celebrations, and even simple meals together, where we cook, play games, and share stories. One of my favorite family moments was when we went on a beach trip together, spending the day swimming, playing volleyball, and enjoying each other’s company.</p>
+
+      <div class="media">
+        <img src="pic6.jfif" alt="Family Picture 1">
+        <img src="pic7.jfif" alt="Family Picture 2">
+        <img src="pic8.jfif" alt="Family Picture 3">
+        <video controls>
+          <source src="video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Scroll animation for sections
+    const sections = document.querySelectorAll('section');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>
+

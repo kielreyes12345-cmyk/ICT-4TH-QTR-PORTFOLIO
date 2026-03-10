@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>School Events Reflection</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #f7faff;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Header */
+    header {
+      background-color: #4fa3f7;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #dfefff;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 140px auto 40px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h1 {
+      color: #2a78c4;
+      border-bottom: 2px solid #cde2ff;
+      padding-bottom: 5px;
+    }
+
+    /* Event box colors */
+    .event-box {
+      line-height: 1.7;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-top: 10px;
+    }
+
+    /* Event Box Colors */
+
+.blue-box { 
+    background-color: #e7f1fc; /* Intrams or general blue theme */
+}
+
+.green-box { 
+    background-color: #e3f7e7; /* Science Month or green theme */
+}
+
+.yellow-box { 
+    background-color: #fff9e3; /* AP Month or yellow theme */
+}
+
+.pink-box { 
+    background-color: #ffd6f0; /* English Month or pink theme */
+}
+
+.orange-box { 
+    background-color: #ffe9b3; /* Christmas Party or soft orange theme */
+}
+
+.values-box { 
+    background-color: #f3e8ff; /* Values Month or purple-ish theme */
+}
+
+.math-box { 
+    background-color: #e0f7f5; /* Math Month or teal theme */
+}
+
+.mapeh-box { 
+    background-color: #ffe8dc; /* MAPEH Month or light orange theme */
+}
+
+.teachers-box {
+    background-color: #fef3e7; /* Teachers’ Day or soft peach */
+}
+
+.noli-box {
+    background-color: #e8f0ff; /* Noli Me Tangere Play or soft blue */
+}
+
+    /* Bold red questions */
+    .question {
+      color: red;
+      font-weight: bold;
+    }
+
+    /* Banner for images/videos */
+    .banner {
+      background-color: #f3e8ff;
+      padding: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      border: 2px solid #caa9ff;
+      border-radius: 10px;
+      flex-wrap: wrap;
+      margin: 20px 0;
+      box-shadow: 0 4px 10px rgba(150, 80, 255, 0.2);
+    }
+
+    .banner img,
+    .banner video {
+      height: 300px;
+      width: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .banner img:hover,
+    .banner video:hover {
+      transform: scale(1.05);
+    }
+
+    ol {
+      background-color: #e7f1fc;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    ol li {
+      margin-bottom: 10px;
+    }
+
+    /* Table of Contents */
+    .toc {
+      margin-bottom: 30px;
+      padding: 15px;
+      background: #e7f1fc;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .toc h2 {
+      margin-top: 0;
+      color: #2a78c4;
+    }
+
+    .toc a {
+      text-decoration: none;
+      color: #2563eb;
+    }
+
+    .toc a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Second Quarter School Events Reflection</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="tle.html">TLE-ICT</a>
+      <a href="ap.html">Araling Panlipunan</a>
+      <a href="events.html">Events</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Table of Contents -->
+    <section class="toc">
+      <h2>Table of Contents</h2>
+      <ol>
+        <li><a href="#intrams">Intrams</a></li>
+        <li><a href="#buwan-ng-wika">Buwan ng Wika</a></li>
+        <li><a href="#science-month">Science Month</a></li>
+        <li><a href="#teachers-day">Teachers’ Day</a></li>
+        <li><a href="#ap-month">A.P. Month</a></li>
+        <li><a href="#english-month">English Month</a></li>
+        <li><a href="#values-month">Values Month</a></li>
+        <li><a href="#christmas-party">Christmas Party</a></li>
+        <li><a href="#math-month">Math Month</a></li>
+        <li><a href="#mapeh-month">MAPEH Month</a></li>
+        <li><a href="#noli-play">Noli Me Tangere Play</a></li>
+      </ol>
+    </section>
+
+    <section>
+     <h1 id="intrams">Intrams</h1>
+      <p class="event-box blue-box">
+        <span class="question">1. What is the most important thing I learned from the event?</span><br>
+        One important thing I learned during the Intramurals was how teamwork really affects the outcome of a game. In both basketball and volleyball, you can’t just rely on yourself. You have to listen to your teammates, support each other, and trust everyone to do their part.
+        <br><br>
+        <span class="question">2. How can I apply what I learned in real-life situations?</span><br>
+        The things I learned can help me in group projects or any team activities, even outside of sports. For example, when working with classmates, I now understand that communication and cooperation are key just like in a game. It’s not about being the best on your own, but about helping the whole group succeed.
+        <br><br>
+        <span class="question">3. Did I actively participate in the event? How?</span><br>
+        Yes, I did. I played both basketball and volleyball for our team. I showed up to practice, joined the games, and gave my best effort on the court. I also encouraged my teammates and stayed focused during each match.
+        <br><br>
+        <span class="question">4. If I were to teach this topic/subject to a classmate, how would I explain it?</span><br>
+        I’d explain that Intramurals is more than just playing sports. It’s about learning how to be a team player, how to manage pressure, and how to keep going even when things get tough. I’d also tell them that it’s a good way to build confidence and meet new people.
+        <br><br>
+        <span class="question">5. Why is it important to have an event (per subject)? Explain your answer.</span><br>
+        Events like this help us apply what we learn in class in a fun and practical way. For PE, it makes the lessons more meaningful because we get to experience them, not just read or talk about them. It also helps build school spirit and gives students a chance to discover skills they might not realize they had.
+      </p>
+
+      <div class="banner">
+        <img src="Team1.jpg.jfif" alt="Team photo 1">
+        <img src="Team2.jpg.jfif" alt="Team photo 2">
+        <video src="TeamVideo.mp4" controls></video>
+      </div>
+
+      <h1 id="buwan-ng-wika">Buwan ng Wika</h1>
+      <p class="event-box green-box">
+        <span class="question">1. What is the most important thing I learned from the event?</span><br>
+        One of the most important things I learned during Buwan ng Wika is how powerful our own language can be. It made me appreciate Filipino more—not just as something we use every day, but as something that reflects who we are and where we come from. I realized that our culture and language are something to be proud of, and it made me want to learn more about them.
+        <br><br>
+        <span class="question">2. How can I apply what I learned in real-life situations?</span><br>
+        What I learned can help me in simple things, like speaking more confidently in Filipino, and not being shy to express myself. It also helped me improve my public speaking, especially when I performed in the Deklamasyon. I think I can use that experience in class presentations, group projects, or even in future events that require communication.
+        <br><br>
+        <span class="question">3. Did I actively participate in the event? How?</span><br>
+        Yes, I did. I joined the Deklamasyon contest, which took a lot of time and practice. I memorized my piece, tried to understand its meaning, and worked on delivering it with the right emotion. I also joined some of the classroom activities and supported my classmates in their performances.
+        <br><br>
+        <span class="question">4. If I were to teach this topic/subject to a classmate, how would I explain it?</span><br>
+        I would tell them that Buwan ng Wika is not just a celebration—it’s a reminder of our roots. I’d explain that it’s about appreciating the Filipino language and culture through different activities like dances, poems, speeches, and songs. It’s also a chance for students to show their talents while learning more about their heritage.
+        <br><br>
+        <span class="question">5. Why is it important to have an event (per subject)? Explain your answer.</span><br>
+        Having events like this is important because it makes learning more meaningful. Instead of just reading or writing, we get to experience the subject in a creative and interactive way. For Filipino, Buwan ng Wika helps us feel more connected to our identity. It also gives students a break from the usual lessons while still learning something valuable.
+      </p>
+
+      <div class="banner">
+        <img src="BuwanNgWika1.jpg.jfif" alt="Buwan ng Wika photo 1">
+        <img src="BuwanNgWika2.jpg.jfif" alt="Buwan ng Wika photo 2">
+        <video src="BuwanNgWikaVideo.mp4" controls></video>
+      </div>
+
+      <h1 id="science-month">Science Month</h1>
+      <p class="event-box yellow-box">
+        <span class="question">1. What is the most important thing I learned from the event?</span><br>
+        Participating in Science Month taught me many valuable lessons, but the most important one was understanding the power of collaboration and how small efforts can lead to big, meaningful results. Working on the hygiene-themed project for Win’s Corner made me realize that science isn't only about formulas or experiments—it’s also about making a positive impact in our daily lives. By simply focusing on cleanliness and hygiene in our classroom, we were able to inspire others, promote healthier habits, and ultimately win the Cleanest Classroom Award. This experience showed me that science can be practical, creative, and socially meaningful, especially when it encourages behavior that leads to a better environment for everyone.
+        <br><br>
+        <span class="question">2. How can I apply what I learned in real-life situations?</span><br>
+        One of the biggest takeaways from this project is that the principles of hygiene and cleanliness apply everywhere—not just during school events. At home, I can make sure to keep my space organized and clean, and I can also encourage my family to recycle and reuse materials whenever possible, just like we did when making the DIY toothbrush holder. In public spaces, I can be more conscious of my waste and how I contribute to the cleanliness of shared environments. Moreover, I learned that being proactive and taking initiative—whether it’s in designing something creative or helping with group tasks—can make a real difference. These are skills and habits I can apply not only in school but also in everyday life, work environments, and community activities in the future.
+        <br><br>
+        <span class="question">3. Did I actively participate in the event? How?</span><br>
+        Yes, I did. I helped with creating our classroom’s hygiene project for Win’s Corner. I worked with my classmates to design and decorate our display, which promoted hygiene and cleanliness. I participated in brainstorming ideas, crafting materials, and ensuring that everything looked neat and creative. It was a fun activity while promoting an important message. I also helped clean, organize, and maintain the space throughout the event to ensure that our classroom stayed neat and presentable. Our collective efforts paid off when we were awarded the Cleanest Classroom, which made the experience even more rewarding.
+        <br><br>
+        <span class="question">4. If I were to teach this topic/subject to a classmate, how would I explain it?</span><br>
+        If I had the opportunity to teach this topic to a classmate, I would begin by explaining that hygiene is not just a personal habit, but a responsibility that affects everyone in a shared space. I would talk about how our class used science and creativity to address hygiene through an interactive classroom design. I would walk them through how we reused materials to create a toothbrush holder, which not only supported hygiene but also taught us about sustainability and reducing waste. I’d emphasize that learning science isn’t limited to reading textbooks—it can involve hands-on projects that teach real-world skills like problem-solving, teamwork, and environmental awareness. I would also encourage them to think about how they could apply science in their own way to improve their surroundings.
+        <br><br>
+        <span class="question">5. Why is it important to have an event (per subject)? Explain your answer.</span><br>
+        Having events like Science Month is important because they make learning more meaningful and engaging. While classroom lessons provide the foundation, events give students the chance to apply what they’ve learned in fun, interactive, and memorable ways. For science in particular, events like these help us see how scientific concepts connect to real-life issues—like health, hygiene, and sustainability. They also promote teamwork, creativity, and leadership skills that students might not get to develop in regular class sessions. Additionally, events foster a sense of community and friendly competition, which motivates everyone to do their best. When students are given the opportunity to take part in a subject-based event, they don’t just memorize facts—they experience the subject in action, which can have a lasting impact on how they view and value education.
+      </p>
+
+      <div class="banner">
+        <img src="ScienceMonth1.jpg.jfif" alt="Science Month photo 1">
+        <img src="ScienceMonth2.jpg.jfif" alt="Science Month photo 2">
+        <video src="ScienceMonthVideo.mp4" controls></video>
+      </div>
+
+      <h1 id="teachers-day">Teachers’ Day</h1>
+      <p class="event-box pink-box">
+        <span class="question">1. What is the most important thing I learned from the event?</span><br>
+        The most important thing I learned from the Teacher’s Day event is how meaningful it can be to express appreciation to the people who guide and support us every day. I’ve always known that teachers work hard, but organizing and participating in this event made me realize just how much they truly impact our lives, both academically and personally. Seeing their reactions—how happy and touched they were—helped me understand that even small gestures can leave a big impression. It taught me that appreciation doesn't always have to come in big ways; it can be through simple, thoughtful efforts like organizing a program or saying thank you.
+        <br><br>
+        <span class="question">2. How can I apply what I learned in real-life situations?</span><br>
+        This experience showed me that showing gratitude, being organized, and working well with others are important skills I can apply in many areas of my life. Whether it’s at school, at home, or in the future in a workplace, teamwork and appreciation go a long way. For example, if I ever lead a group project again, I’ll remember how important communication and cooperation were when we were planning the Teacher’s Day program. I also learned that stepping up to take on a responsibility, like being the host or helping with logistics, builds confidence and leadership skills.
+        <br><br>
+        <span class="question">3. Did I actively participate in the event? How?</span><br>
+        Yes, I was very involved in the event. I helped by providing the prizes for the games and activities, which made the program more exciting and rewarding for both teachers and students. I also volunteered to be the host of the program, which was a big responsibility but also a lot of fun. I made sure to keep the audience engaged, introduced each part of the program, and helped keep everything running smoothly. It felt great to play such an important role and to contribute to making the event successful.
+        <br><br>
+        <span class="question">4. If I were to teach this topic/subject to a classmate, how would I explain it?</span><br>
+        I would tell my classmate that Teacher’s Day isn’t just another school celebration—it’s a chance to reflect on how much our teachers do for us. I’d explain that planning a program like this teaches us a lot of real-life skills, like organization, time management, and teamwork. I’d also encourage them to get involved in school events because it helps you grow as a person, and it gives you the chance to give back to the people who help you every day.
+        <br><br>
+        <span class="question">5. Why is it important to have an event (per subject)? Explain your answer.</span><br>
+        Having events for each subject—or for important occasions like Teacher’s Day—helps us connect more deeply with what we’re learning and with the people around us. These events allow us to be creative, step outside of our usual routines, and apply what we’ve learned in class in more meaningful ways. They also build school spirit and a sense of community. Specifically for Teacher’s Day, it gave us the opportunity to say thank you and to show our appreciation through something fun and heartfelt. Events like this remind us that learning isn’t just about textbooks—it’s also about relationships, values, and personal growth.
+      </p>
+
+      <div class="banner">
+        <img src="TeachersDay1.jpg.jfif" alt="Teachers’ Day photo 1">
+        <img src="TeachersDay2.jpg.jfif" alt="Teachers’ Day photo 2">
+        <img src="TeachersDay3.jpg.jfif" alt="Teachers’ Day photo 3">
+        <video src="TeachersDayVideo.mp4" controls></video>
+      </div>
+
+      <h1 id="ap-month">A.P. Month</h1>
+      <p class="event-box orange-box">
+        <span class="question">1. What is the most important thing I learned from the event?</span><br>
+        One of the most important things I learned during AP Month was how valuable it is to understand different cultures and global perspectives. Representing New Zealand in the United Nations simulation taught me a lot about international relations, diplomacy, and how every country—no matter how big or small—plays a role in solving world issues. It was an eye-opening experience because it made me realize that being informed about global problems, such as climate change, peace, and equality, is essential not just for leaders but for ordinary citizens as well. It also reminded me that history and social studies aren’t just about memorizing facts—they help us understand how society works and how we can make it better.
+        <br><br>
+        <span class="question">2. How can I apply what I learned in real-life situations?</span><br>
+        I can apply what I learned in real-life situations by being more aware of current events and how they affect not only our country but also the rest of the world. I can also practice the skills I developed during AP Month, such as critical thinking, public speaking, and teamwork. For example, during the United Nations simulation, I learned how to express my opinions respectfully while considering the perspectives of others. That’s something I can use in discussions, debates, and even in everyday life when solving problems or making decisions. It also made me more motivated to read the news, learn about global issues, and think about how we as students can contribute to positive change.
+        <br><br>
+        <span class="question">3. Did I actively participate in the event? How?</span><br>
+        Yes, I actively participated in several parts of the event. I joined the Quiz Bee, where I reviewed and studied a lot of lessons about history and current events. I also contributed to our editorial cartoon entry, where I helped brainstorm ideas and give feedback on the final design. During the UN simulation, I represented New Zealand and delivered a speech about climate action, which helped me practice speaking in front of a crowd with confidence. All of these experiences helped me improve my academic knowledge while also developing my communication and leadership skills.
+        <br><br>
+        <span class="question">4. If I were to teach this topic/subject to a classmate, how would I explain it?</span><br>
+        I would explain that Araling Panlipunan is not just about studying history—it’s about understanding people, cultures, and how societies develop over time. I’d tell them that AP Month is a way to make learning about social issues more interactive and exciting. For example, by joining activities like the UN simulation, Quiz Bee, or poster-making, we get to apply what we’ve learned in class to real-world topics. I’d encourage my classmate to join because it helps improve research, teamwork, and communication skills while also deepening one’s appreciation for global awareness and citizenship.
+        <br><br>
+        <span class="question">5. Why is it important to have an event (per subject)? Explain your answer.</span><br>
+        Having events like AP Month is important because they make learning more alive and engaging. It allows students to go beyond the classroom and experience what they’re studying in a hands-on way. For Araling Panlipunan, it helps us connect history, politics, and culture with present-day issues, making the lessons more meaningful. These events also help students discover their strengths—whether in leadership, creativity, or analytical thinking—and encourage teamwork and healthy competition. Most of all, it teaches us to become more socially aware and responsible citizens who understand not just our own country but also our role in the larger global community.
+      </p>
+
+      <div class="banner">
+        <img src="APMonth1.jpg.JFIF" alt="A.P. Month photo 1">
+        <img src="APMonth2.jpg.jfif" alt="A.P. Month photo 2">
+        <video src="APMonthVideo.mp4" controls></video>
+      </div>
+
+
+<h1 id="english-month">English Month</h1>
+<p class="event-box pink-box">
+
+<span class="question">1. What is the most important thing I learned from the event?</span><br>
+The most important thing I learned from English Month is the importance of creativity, confidence, and appreciation for literature. During the event, I participated in several activities and I was able to win Overall Champion in Slogan Making and Best Book Costume. These activities helped me express my ideas and creativity in English. I also learned that books and stories can inspire us to be imaginative and expressive. Through the activities, I realized that English is not only about grammar and writing, but also about creativity, communication, and understanding stories.
+<br><br>
+
+<span class="question">2. How can I apply what I learned in real-life situations?</span><br>
+I can apply what I learned by using my creativity and communication skills in different situations. Winning in slogan making helped me realize that words can be powerful in expressing ideas and messages. I can use this skill when writing essays, making presentations, or sharing my opinions. Participating in the Best Book Costume and helping with the Booklandia activity also taught me to be confident and cooperative with others. These skills can help me in school activities and when working with a team.
+<br><br>
+
+<span class="question">3. Did I actively participate in the event? How?</span><br>
+Yes, I actively participated in English Month in many ways. I joined the Slogan Making contest and won Overall Champion. I also participated in the Best Book Costume and won in that category. Our class also designed our classroom door as the book cover of The Wizard of Oz, and I helped in decorating it. Aside from that, I also helped in the Booklandia activity, where our representative performed well and won. By joining and helping in these activities, I was able to contribute to the success of the event.
+<br><br>
+
+<span class="question">4. If I were to teach this topic/subject to a classmate, how would I explain it?</span><br>
+If I were to explain English Month to a classmate, I would say that it is a celebration of the English language, literature, and creativity. It includes different activities such as slogan making, book character costumes, and performances that are inspired by books and stories. These activities help students improve their English skills while also allowing them to be creative and confident. English Month shows that learning English can be fun and exciting.
+<br><br>
+
+<span class="question">5. Why is it important to have an event (per subject)? Explain your answer.</span><br>
+Having an event like English Month is important because it allows students to apply what they learn in a fun and creative way. It helps students develop confidence in using the English language through writing, speaking, and performing. Events like this also encourage creativity, teamwork, and appreciation for literature and stories. Most importantly, English Month makes learning more enjoyable and gives students the chance to showcase their talents and skills.
+<br><br>
+
+<div class="banner">
+  <img src="EnglishMonth1.jpg.JFIF" alt="English Month Photo 1">
+  <img src="EnglishMonth2.jpg.JFIF" alt="English Month Photo 2">
+  <video src="EnglishMonthVideo.mp4" controls></video>
+</div>
+</p>
+
+<h1 id="values-month">Values Month</h1>
+<p class="event-box values-box">
+
+<span class="question">1. What is the most important thing I learned from the event?</span><br>
+The most important thing I learned during Values Month is that leadership is about character, humility, and responsibility, not just about holding a title. When I passed the crown as Mr. MVP, I felt proud but also emotional because it marked the end of my journey as a title holder and reminded me that true leadership means inspiring others and gracefully allowing someone else to take your place. It taught me maturity, respect, and gratitude for the opportunity I was given. At the same time, participating in the V-pop dance performance showed me the importance of teamwork, discipline, and unity, because no performance becomes successful without cooperation and support from every member. Overall, Values Month helped me realize that values are not just lessons we talk about in class, but qualities we must live out every day.
+
+<br><br>
+
+<span class="question">2. How can I apply what I learned in real-life situations?</span><br>
+I can apply what I learned by practicing humility, responsibility, and teamwork in my daily life. Passing the crown taught me how to handle success with grace and appreciation, reminding me to stay humble even when I achieve something. Through V-pop dance, I developed discipline, time management, and cooperation because we had to practice regularly, coordinate with each other, and make sure we performed as one group. These experiences can help me in group projects, school activities, leadership roles, and even in handling challenges in the future. The confidence I gained from performing and being part of the ceremony will also help me express myself better and take on new opportunities without fear.
+
+<br><br>
+
+<span class="question">3. Did I actively participate in the event? How?</span><br>
+Yes, I actively participated in Values Month by taking part in two important activities. First, I was involved in the crown passing ceremony as Mr. MVP, which was a meaningful role that symbolized leadership and responsibility. It required confidence and composure because I represented not just myself but the values connected to the title. Second, I joined the V-pop dance performance, where our group practiced hard, corrected our mistakes, and supported each other to deliver a good performance. By participating in both the ceremony and the dance, I showed dedication, teamwork, and school spirit, proving that I did not just attend the event but truly contributed to its success.
+
+<br><br>
+
+<span class="question">4. If I were to teach this topic/subject to a classmate, how would I explain it?</span><br>
+If I were to explain Values Month to a classmate, I would say that it is a celebration of good character and positive behavior, not just a series of performances and awards. I would tell them that it focuses on important values such as respect, honesty, discipline, responsibility, and humility, which guide us in becoming better individuals. Activities like pageants, crown passings, and group dances are not only for entertainment but are opportunities to show these values in action—for example, humility in passing a title and teamwork in performing together. I would explain that Values Month helps students understand that character is just as important as talent or academic success.
+
+<br><br>
+
+<span class="question">5. Why is it important to have an event (per subject)? Explain your answer.</span><br>
+It is important to have events like Values Month because they make learning more meaningful and memorable. Instead of only discussing values inside the classroom, students get to practice and experience them through real activities, which helps us understand their importance on a deeper level. Events like this also build confidence, leadership skills, unity, and cooperation among students while allowing us to express our talents. Most importantly, Values Month reminds us that the values we learn in school shape our attitudes and decisions in everyday life, preparing us not only for academic success but also for becoming responsible and respectful individuals in the future.
+
+</p>
+<div class="banner">
+  <img src="Values1.jpg.JFIF" alt="Values Month Photo 1">
+  <img src="Values2.jpg.JFIF" alt="Values Month Photo 2">
+<img src="Values3.jpg.JFIF" alt="Values Month Photo 3">
+  <video src="ValuesVideo.mp4" controls></video>
+</div>
+
+<h1 id="christmas-party">Christmas Party</h1>
+<p class="event-box orange-box">
+
+<span class="question">1. What is the most important thing I learned from the event?</span><br>
+The most important thing I learned from the Christmas party is the value of friendship, gratitude, and sharing happiness with others. During the celebration, we played games, exchanged gifts, and enjoyed food together as a class. These activities reminded me that Christmas is not only about receiving gifts but also about spending meaningful time with the people around us. Seeing everyone laugh and participate made me realize how important it is to appreciate moments with classmates and teachers. The event also showed me that simple celebrations can bring a lot of joy and strengthen our bond as a class.
+<br><br>
+
+<span class="question">2. How can I apply what I learned in real-life situations?</span><br>
+I can apply what I learned by showing more kindness, generosity, and appreciation toward others. The Christmas party reminded me that sharing and giving can make people happy, even in simple ways. In real life, I can practice this by helping my classmates, being thoughtful to my friends and family, and showing gratitude for the things I have. I also learned the importance of enjoying moments together, which I can apply by spending quality time with the people who matter to me.
+<br><br>
+
+<span class="question">3. Did I actively participate in the event? How?</span><br>
+Yes, I actively participated in the Christmas party by joining the games, participating in the gift exchange, and celebrating with my classmates. I also helped create a fun and positive atmosphere by cheering, laughing, and interacting with everyone. By participating in the activities and enjoying the celebration, I contributed to making the event lively and memorable for our class.
+<br><br>
+
+<span class="question">4. If I were to teach this topic/subject to a classmate, how would I explain it?</span><br>
+If I were to explain the Christmas party to a classmate, I would say that it is a special celebration where students and teachers come together to enjoy the spirit of Christmas. It includes activities like games, gift exchanges, and sharing food, which help everyone feel happy and connected. I would explain that the purpose of the Christmas party is not just to have fun, but also to remind us about the values of kindness, gratitude, and giving.
+<br><br>
+
+<span class="question">5. Why is it important to have an event (per subject)? Explain your answer.</span><br>
+Having events like a Christmas party is important because it allows students to relax, bond, and create happy memories together. It helps strengthen friendships and improve the relationship between students and teachers. Events like this also give students a break from academic work while still teaching valuable lessons about cooperation, generosity, and appreciation. Most importantly, celebrations like a Christmas party help build a positive and enjoyable school environment where everyone feels included and happy. 🎄🎉
+<br><br>
+
+<div class="banner">
+  <img src="Christmas1.jpg.JFIF" alt="Christmas Party Photo 1">
+  <img src="Christmas2.jpg.JFIF" alt="Christmas Party Photo 2">
+<img src="Christmas3.jpg.JFIF" alt="Christmas Party Photo 3">
+
+  <video src="ChristmasVideo.mp4" controls></video>
+</div>
+</p>
+
+<h1 id="math-month">Math Month</h1>
+<p class="event-box math-box">
+
+<span class="question">1. What is the most important thing I learned from the event?</span><br>
+The most important thing I learned during Math Month is that math can be creative, fun, and exciting when applied in different ways. When we made our Math TikTok video about the trapezoid of a kite, I realized that math is not just about solving equations on paper but also about explaining concepts in a simple and creative way. It helped me understand the topic better because we had to study it carefully before presenting it in our video. Winning in Math Garden also showed me that math can be connected to art and design, since planning and organizing the garden required careful thinking and teamwork. Overall, Math Month helped me see that math is everywhere and can be both educational and enjoyable.
+
+<br><br>
+
+<span class="question">2. How can I apply what I learned in real-life situations?</span><br>
+I can apply what I learned by using creativity and critical thinking when solving problems. Making the Math TikTok taught me how to simplify complex ideas, which can help me during class discussions, presentations, and even tutoring classmates. Understanding shapes like trapezoids is also useful in real life, especially in designing, building, or arranging objects properly. Through Math Garden, I learned planning, cooperation, and attention to detail, which are important skills in organizing projects and working with a team. These experiences showed me that math is not just for school but is useful in everyday situations that require logical thinking and creativity.
+
+<br><br>
+
+<span class="question">3. Did I actively participate in the event? How?</span><br>
+Yes, I actively participated in Math Month by contributing to both the Math TikTok and Math Garden activities. In the Math TikTok, I helped create and present a video explaining the trapezoid of a kite, making sure that our explanation was clear, creative, and accurate. We worked together to plan the content, record the video, and edit it properly. In Math Garden, I also participated in designing and arranging the garden, which required teamwork and effort. Our hard work paid off because we won, and our garden was recognized for being beautiful and well-prepared.
+
+<br><br>
+
+<span class="question">4. If I were to teach this topic/subject to a classmate, how would I explain it?</span><br>
+If I were to explain Math Month to a classmate, I would say that it is a celebration that shows how math can be fun, interactive, and connected to real life. I would explain that activities like Math TikTok help students understand lessons in a creative way, while contests like Math Garden show that math involves planning, patterns, measurement, and design. I would tell them that math is not only about numbers but also about thinking logically and solving problems in different situations. Math Month makes students appreciate math more because it allows them to learn beyond textbooks.
+
+<br><br>
+
+<span class="question">5. Why is it important to have an event (per subject)? Explain your answer.</span><br>
+Having an event like Math Month is important because it changes the way students see the subject. Instead of thinking that math is difficult or boring, students experience it through engaging activities that build confidence and teamwork. It encourages creativity while strengthening understanding of mathematical concepts. Events like Math Month also motivate students to participate, improve their skills, and discover talents they did not know they had. Most importantly, it shows that math plays an important role in everyday life and helps develop problem-solving skills that we will use in the future.
+
+</p>
+<div class="banner">
+  <img src="Math1.jpg.JFIF" alt="Math Month Photo 1">
+  <img src="Math2.jpg.JFIF" alt="Math Month Photo 2">
+  <video src="MathVideo.mp4" controls></video>
+</div>
+
+<h1 id="mapeh-month">MAPEH Month</h1>
+<p class="event-box mapeh-box">
+
+<span class="question">1. What is the most important thing I learned from the event?</span><br>
+The most important thing I learned during MAPEH Month is the value of cultural appreciation, creativity, and self-expression. When I participated in the folk dance competition and won 2nd runner-up, I realized how important teamwork, discipline, and dedication are in performing traditional dances. Folk dance is not just about movements; it represents our culture and history, and performing it made me feel proud of our heritage. Watching the street dance and Battle of the Bands also showed me how diverse talents can come together in one celebration. I learned that MAPEH is not only about grades but about expressing emotions, culture, and passion through music, arts, and physical performance.
+
+<br><br>
+
+<span class="question">2. How can I apply what I learned in real-life situations?</span><br>
+I can apply what I learned by becoming more confident in expressing myself and appreciating different forms of art and culture. Joining the folk dance competition helped me improve my coordination, discipline, and teamwork, which are important in group activities and real-life responsibilities. Watching the street dance and Battle of the Bands taught me to appreciate other people’s talents and efforts, which encourages respect and open-mindedness. These experiences also helped me manage stage fright and boosted my confidence, which I can use in presentations, performances, and other public events in the future.
+
+<br><br>
+
+<span class="question">3. Did I actively participate in the event? How?</span><br>
+Yes, I actively participated in MAPEH Month by joining the folk dance competition, where we practiced hard and worked together to deliver a strong performance that earned us 2nd runner-up. I dedicated time and effort to memorizing the steps, improving my timing, and making sure our group was synchronized. Aside from performing, I also supported the event by watching the street dance competition and the Battle of the Bands. By cheering for the participants and enjoying the performances, I showed appreciation and school spirit.
+
+<br><br>
+
+<span class="question">4. If I were to teach this topic/subject to a classmate, how would I explain it?</span><br>
+If I were to explain MAPEH Month to a classmate, I would say that it is a celebration of talent, culture, and creativity. It highlights the importance of music, arts, physical education, and health by allowing students to perform and showcase their skills. I would explain that activities like folk dance help preserve culture, while street dance and Battle of the Bands allow modern creativity to shine. MAPEH Month teaches students that learning is not limited to academics but also includes developing artistic skills, physical abilities, and confidence.
+
+<br><br>
+
+<span class="question">5. Why is it important to have an event (per subject)? Explain your answer.</span><br>
+Having an event like MAPEH Month is important because it gives students a chance to express their talents and apply what they learn in a fun and meaningful way. It builds confidence, teamwork, discipline, and appreciation for culture and the arts. Events like this also strengthen friendships and create memorable experiences that make school life more enjoyable. Most importantly, MAPEH Month reminds us that education is not only about academic knowledge but also about developing creativity, physical fitness, and emotional expression.</p>
+
+<div class="banner">
+  <img src="MAPEH1.jpg.JFIF" alt="MAPEH Month Photo 1">
+  <img src="MAPEH2.jpg.JFIF" alt="MAPEH Mo nth Photo 2">
+  <video src="MAPEHVideo.mp4" controls></video>
+</div>
+
+<h1 id="noli-play">Noli Me Tangere Play</h1>
+<p class="event-box noli-box">
+
+<span class="question">1. What is the most important thing I learned from the event?</span><br>
+The most important thing I learned from our Noli Me Tangere play is the importance of teamwork, dedication, and understanding our history. I played the role of Elias, and through singing and acting, I was able to express the character’s emotions and struggles. Preparing for the play helped me understand the story of Noli Me Tangere more deeply and appreciate the message of the novel. Our group worked very hard during practices, and when we finally performed successfully, I realized that effort and cooperation can lead to great results.
+<br><br>
+
+<span class="question">2. How can I apply what I learned in real-life situations?</span><br>
+I can apply what I learned by being more responsible and cooperative when working with others. Acting as Elias required confidence, preparation, and teamwork with my classmates. In real-life situations, I can use these skills during group projects, presentations, and other activities that require collaboration. I also learned to appreciate our history and the sacrifices of people in the past, which helps me become more aware of the importance of justice and standing up for what is right.
+<br><br>
+
+<span class="question">3. Did I actively participate in the event? How?</span><br>
+Yes, I actively participated in the Noli Me Tangere play by performing the role of Elias. I sang and acted during the presentation, and I practiced many times with my group to improve our performance. I made sure to memorize my lines, understand my character, and perform with emotion so the audience could understand the story. Our group worked very hard during rehearsals, and our efforts paid off when we successfully presented our play.
+<br><br>
+
+<span class="question">4. If I were to teach this topic/subject to a classmate, how would I explain it?</span><br>
+If I were to explain our Noli Me Tangere play to a classmate, I would say that it is a performance based on the novel written by Jose Rizal that shows the problems and struggles of Filipinos during the Spanish colonial period. Through acting and singing, we present the story and the important lessons from the novel. I would also explain that playing characters like Elias helps students understand the emotions, sacrifices, and bravery of the people in the story.
+<br><br>
+
+<span class="question">5. Why is it important to have an event (per subject)? Explain your answer.</span><br>
+Having an event like a Noli Me Tangere play is important because it helps students understand the story in a more creative and engaging way. Instead of only reading the novel, students can experience it through acting, singing, and storytelling. It also helps students develop confidence, teamwork, and communication skills. Most importantly, it helps us appreciate Philippine history and the message of the novel, which teaches us about freedom, justice, and love for our country.
+<br><br>
+
+<div class="banner">
+  <img src="Noli1.jpg.JFIF" alt="Noli Me Tangere Play Photo 1">
+  <img src="Noli2.jpg.JFIF" alt="Noli Me Tangere Play Photo 2">
+  <video src="NoliVideo.mp4" controls></video>
+</div>
+
+<p class="event-box orange-box">
+  Check out the Noli Me Tangere event file here: 
+  <a href="https://drive.google.com/file/d/1cfsBDAetY4xTmfnfatI3OKZh1WiUWAc1/view?usp=drive_link" target="_blank">
+    Open File
+  </a>
+</p>
+
+</p>
+
+    </section>
+  </main>
+</body>
+</html>
